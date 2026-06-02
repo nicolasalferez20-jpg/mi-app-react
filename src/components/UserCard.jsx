@@ -16,7 +16,7 @@ const UserCard = ({ user,isFavorite, onToggleFavorite}) => {
                 <Button variant="secondary">
                 <Link to={`/user/${user.id}`}
                     style={styles.link}>
-                    Ver Detalles
+                     Ver Detalles
                 </Link>
                 </Button>
 
@@ -82,7 +82,7 @@ const styles = {
         gap: "10px",
     },
     link: {
-        color: "#5b97d6",
+        color: "#fbfbfb",
         textDecoration: "none",
         fontWeight: "600",
         fontSize: "14px",

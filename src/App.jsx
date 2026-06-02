@@ -13,10 +13,10 @@ function App() {
        <h1>PROYECTO REACT</h1>
        <nav>
         <Link className="nav-button" to="/">
-        Usuarios
+         Usuarios
         </Link>
         <Link className="nav-button" to="/favorites">
-        Favoritos
+         Favoritos
         </Link>
         </nav>
      </header>

@@ -27,7 +27,7 @@ const UserDetail = () => {
 
             <Link to="/" className="back-link">
             <Button variant="secondary">
-            volver al listado
+             volver al listado
             </Button>
             </Link>
 
