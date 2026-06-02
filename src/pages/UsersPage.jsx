@@ -5,6 +5,8 @@ import {addFavorite, removeFavorite, selectAllFavorites } from "../features/favo
 import UserCard from "../components/UserCard";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import "./UsersPage.css";
+
 
 const UsersPage = () => {
     const dispatch = useDispatch();
@@ -38,18 +40,18 @@ const UsersPage = () => {
 
     return (
         <div>
-            <div
-                style={styles.searchContainer}>
+            <div className="search-container">
                 <input
                 type="text"
                 placeholder="Buscar Usuarios por Nombre..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                style={styles.input}
+                className="search-input"
                 />
-            </div>
+             </div>
+            
 
-            <div style={styles.grid}>
+            <div className="users-grid">
                 {filteredUsers && filteredUsers.length > 0 ? (
                     filteredUsers.map((user) => {
 
@@ -64,38 +66,11 @@ const UsersPage = () => {
                     );
                 })
             ) : (
-                <p style={styles.noResults}>No se encontraron usuarios que coincidan con la busqueda.</p>
+                <p className="no-results">No se encontraron usuarios que coincidan con la busqueda.</p>
             )}
             </div>
         </div>
     );
-};
-const styles = {
-    searchContainer: {
-        marginBottom: "20px",
-        display: "flex",
-        justifyContent: "center",
-    },
-    input: {
-        width: "100%",
-        maxWidth: "400px",
-        padding: "10px",
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        fontSize: "16px",
-    },
-    grid: {
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-        gap: "20px",
-    },
-    noResults: {
-        gridColumn: "1 / -1",
-        textAlign: "center",
-        color: "#777",
-        fontSize: "18px",
-        marginTop: "20px",
-    },
 };
 
 export default UsersPage;
