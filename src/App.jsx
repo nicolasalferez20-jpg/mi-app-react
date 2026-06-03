@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate, Link} from 'react-rou
 import UsersPage from './pages/UsersPage'
 import UserDetail from './pages/UserDetail'
 import FavoritesPage from "./pages/FavoritesPage"
-import './App.css'
+import "./index.css"
 
 
 function App() {

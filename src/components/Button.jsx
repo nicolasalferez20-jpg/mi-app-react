@@ -2,33 +2,27 @@ import React from 'react';
 
 const Button = ({ onClick, children, variant = "primary", disabled = false, type = "button" }) => {
 
-    const getStyles = () => {
-        const baseStyles = {
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '16px',
-            fontWeight: 'bold',
-            transition: 'background-color 0.3s ease',
-        };
+    const getClasses = () => {
+       const base =
+      "px-3 py-2 rounded text-sm font-semibold text-white transition-colors duration-300 cursor-pointer";
+
         if (variant === 'primary') {
-            return { ...baseStyles,  backgroundColor: '#007bff', color: '#fff' };
+            return `${base} bg-blue-600 hover:bg-blue-700`;
         }
         if (variant === 'danger') {
-            return { ...baseStyles,  backgroundColor: '#dc3545', color: '#fff' };
+            return `${base} bg-red-600 hover:bg-red-700`;
         }
         if (variant === 'secondary') {
-            return { ...baseStyles,  backgroundColor: '#9facb9', color: '#fff' };
+            return `${base} bg-slate-500 hover:bg-slate-600`;
         }
-        return baseStyles;
+        return base;
     };
     return (
             <button
                 type={type}
                 onClick={onClick}
                 disabled={disabled}
-                style={getStyles()}
+                className={getClasses()}
             >
                 {children}
             </button>

@@ -1,35 +1,12 @@
-import react from "react";
+import React from "react";
 
-const loader = ({ message = "cargando informacion..."}) => {
+const Loader = ({ message = "cargando informacion..."}) => {
     return (
-        <div style={styles.container}>
-            <div style={styles.spinner}></div>
-            <p style={styles.text}>{message}</p>
+        <div className="flex flex-col items-center justify-center p-5 w-full">
+            <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            <p className="mt-2.5 text-gray-600 text-sm font-medium">{message}</p>
         </div>
     );
 };
-const styles = {
-    container: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "20px",
-        width: "100%",
-    },
-    spiner: {
-        width: "50px",
-        height: "50px",
-        border: "6px solid #ccc",
-        borderTop: "6px solid #333",
-        borderRadius: "50%",
-        animation: "spin 1s linear infinite",
-    },
-    text: {
-        marginTop: "10px",
-        color: "#333",
-        fontSize: "16px",
-        frontWeight: "500",
-    }
-};
-export default loader;
+
+export default Loader;

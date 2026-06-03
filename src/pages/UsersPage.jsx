@@ -46,7 +46,8 @@ const UsersPage = () => {
                 placeholder="Buscar Usuarios por Nombre..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
+                //css tailwind prueba
+                className="w-full max-w-md px-4 py-2 rounded-lg bg-blue-100 text-blue-900"
                 />
              </div>
             

@@ -1,26 +1,12 @@
-import react from "react";
+import React from "react";
 
-const error = ({message = "Ha ocurrido un error al  cargar los datos "}) => {
+const Error = ({message = "Ha ocurrido un error al  cargar los datos "}) => {
     return (
-        <div style={styles.container}>
-            <h3 style={styles.title}>¡Ups! algo salio mal</h3>
-            <p style={styles.message}>{message}</p>
+        <div className="border border-gray-300 bg-red-100 text-red-900 p-5 rounded max-w-md mx-auto my-5">
+            <h3 className="mb-2.5 font-bold ">¡Ups! algo salio mal</h3>
+            <p className="m-0 text-base ">{message}</p>
         </div>
     );
 };
-const styles = {
-    container: {
-        border: "1px solid #ccc",
-        backgroundColor: "#f8d7da",
-        color: "#721c24",
-        padding: "20px",
-        borderRadius: "5px",
-        maxWidth: "400px",
-        margin: "20px auto",
-    }
-    ,title: {margin: "0 0 10px 0",
-         fontWeight: "bold"}
-    ,message: {margin: 0,
-         fontSize: "16px"}
-};
-export default error;
+
+export default Error;
