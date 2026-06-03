@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Manejo dinámico de estilos según la variante 
 const Button = ({ onClick, children, variant = "primary", disabled = false, type = "button" }) => {
 
     const getClasses = () => {

@@ -10,13 +10,14 @@ import "./UsersPage.css";
 
 const UsersPage = () => {
     const dispatch = useDispatch();
-
+    //  Consumo de la API con el hook de RTK Query
     const {data: users, isLoading, isError, error} = useGetUsersQuery();
-
+    // Lectura del estado global de favoritos desde Redux
     const favorites = useSelector(selectAllFavorites);
-
+    // Estado local para controlar el filtro de búsqueda
     const [searchTerm, setSearchTerm] = useState("");
 
+    // Manejo de la lógica para agregar o remover favoritos
     const handleToggleFavorite = (user) => {
         const isFav = favorites.some((fav) => fav.id === user.id);
         if (isFav) {
@@ -34,6 +35,7 @@ const UsersPage = () => {
         return <Error message={error?.data?.message || "Error al Cargar los Usuarios"} />;
     }
 
+    // Lógica para Filtrar los usuarios por el nombre ingresado 
     const filteredUsers = users.filter((user) =>
      user.name.toLowerCase().includes(searchTerm.toLowerCase())
      );

@@ -8,9 +8,9 @@ import "./UserDetail.css";
 
 
 const UserDetail = () => {
-
+    //  Extraemos el id de los parámetros de la ruta (URL)
     const {id} = useParams();
-
+    //  Consumimos el endpoint específico usando el id capturado
     const {data: user, isLoading, isError, error} = useGetUserByIdQuery(id);
 
     if (isLoading){

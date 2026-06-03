@@ -5,6 +5,8 @@ import Button from "./Button";
 const UserCard = ({ user,isFavorite, onToggleFavorite}) => {
     return (
         <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-md flex flex-col items-center justify-between hover:shadow-lg transition-shadow">
+
+            // Avatar básico usando las iniciales del usuario
             <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold mb-3">
                 {user.name ? user.name.charAt(0): "U"}
             </div>
@@ -19,7 +21,8 @@ const UserCard = ({ user,isFavorite, onToggleFavorite}) => {
                      Ver Detalles
                 </Link>
                 </Button>
-
+                
+                //Boton de agregar y quitar de favoritos
                 <Button 
                 variant={isFavorite ? "danger" : "primary"}
                 onClick={() => onToggleFavorite(user)}
