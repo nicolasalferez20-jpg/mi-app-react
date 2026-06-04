@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
 import {usersApi} from '../services/usersApi';
-import favoritesReducer from "../features/favorites/favoritesSlice";
+import favoritesReducer from "../features/favorites/FavoritesSlice";
 
 // Vinculamos el slice de favoritos al estado global
 export const store = configureStore({
